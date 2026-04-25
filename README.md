@@ -13,9 +13,15 @@
 ・composer install  
 ・cp .env.example .env  
 ・php artisan key:generate  
-・php artisan migrate
+・php artisan migrate  
+・php artisan db:seed  
 
 ### 開発環境
+
+・お問い合わせ画面：  
+・ユーザー登録：  
+・phpMyAdmin：http://localhost:8080/
+
 
 ## 使用技術（実行環境）
 
