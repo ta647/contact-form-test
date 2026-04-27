@@ -51,11 +51,11 @@
                         <div class="form__input--text__gender">
                             <label class="gender__item">
                                 <input type="radio" name="gender" value="1">
-                                <span>男</span>
+                                <span>男性</span>
                             </label>
                             <label class="gender__item">
                                 <input type="radio" name="gender" value="2">
-                                <span>女</span>
+                                <span>女性</span>
                             </label>
                             <label class="gender__item">
                                 <input type="radio" name="gender" value="3">
@@ -130,8 +130,8 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--select">
-                            <select name="category_id">
-                                <option value="">選択してください</option>
+                            <select name="category_id" required>
+                                <option value="" selected disabled>選択してください</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">
                                         {{ $category->content }}
