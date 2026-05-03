@@ -20,6 +20,8 @@ class AdminController extends Controller
                   ->orWhere('last_name', 'like', "%{$keyword}%")
                   ->orWhereRaw("CONCAT(first_name, last_name) like ?", ["%{$keyword}%"])
                   ->orWhereRaw("CONCAT(last_name, first_name) like ?", ["%{$keyword}%"])
+                  ->orWhereRaw("CONCAT(first_name, ' ', last_name) like ?", ["%{$keyword}%"])
+                  ->orWhereRaw("CONCAT(last_name, ' ', first_name) like ?", ["%{$keyword}%"])
                   ->orWhere('email', 'like', "%{$keyword}%");
             });
         }

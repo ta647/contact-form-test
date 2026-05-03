@@ -12,7 +12,8 @@ Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
-    Route::delete('/admin/{id}', [AdminController::class, 'delete']);
+    Route::get('/search', [AdminController::class, 'index']);
+    Route::delete('/delete/{id}', [AdminController::class, 'delete']);
     Route::get('/export', [AdminController::class, 'export']);
     Route::get('/reset', function () { return redirect('/admin'); });
 });

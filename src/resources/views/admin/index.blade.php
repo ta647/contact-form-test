@@ -27,7 +27,7 @@
             </div>
 
             {{-- 検索フォーム --}}
-            <form class="search__form" action="/admin" method="GET">
+            <form class="search__form" action="/search" method="GET">
                 <div class="search__fields">
                     <div class="search__field">
                         <input type="text" name="keyword" class="search__input--keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="search__field">
                         <div class="select-wrap">
-                            <input type="date" name="date" value="{{ request('date') }}">
+                            <input type="date" name="date" value="{{ request('date') }}" placeholder="年/月/日" autocomplete="off">
                         </div>
                     </div>
                     <div class="search__actions">
@@ -151,7 +151,7 @@
                 document.getElementById('modal-building').textContent = this.dataset.building;
                 document.getElementById('modal-category').textContent = this.dataset.category;
                 document.getElementById('modal-detail').textContent   = this.dataset.detail;
-                document.getElementById('modal-delete-form').action   = '/admin/' + this.dataset.id;
+                document.getElementById('modal-delete-form').action   = '/delete/' + this.dataset.id;
                 modal.classList.add('is-open');
             });
         });
@@ -164,6 +164,11 @@
             if (e.target === modal) {
                 modal.classList.remove('is-open');
             }
+        });
+    </script>
+    <script>
+        document.querySelector('input[name="date"]').addEventListener('click', function () {
+            try { this.showPicker(); } catch (e) {}
         });
     </script>
 </body>

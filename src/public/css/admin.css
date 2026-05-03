@@ -103,11 +103,24 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     padding-right: 30px;
+    text-align: center;
 }
 
 .select-wrap input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
+
+input[name="date"] {
+    min-width: 155px;
+    width: 155px;
+}
+
+input[name="date"]::placeholder {
+    color: #7a7045;
+    opacity: 1;
+}
+
 
 .select-wrap::after {
     content: "";
@@ -123,7 +136,7 @@
 }
 
 .search__field input.search__input--keyword {
-    background: none;
+    background: #fafafa;
     width: 350px;
 }
 
@@ -178,7 +191,7 @@
 
 .btn-export {
     padding: 8px 24px;
-    background: #dde0e6;
+    background: #ebeaea;
     color: #ae9c92;
     text-decoration: none;
     border-radius: 3px;
@@ -196,7 +209,7 @@
 }
 
 .admin__table th {
-    background: #ae9c92;
+    background: #927c51;
     color: #fff;
     padding: 14px 40px;
     text-align: left;
@@ -322,7 +335,7 @@ a.page-item:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     display: none;
     justify-content: center;
     align-items: center;
@@ -335,47 +348,57 @@ a.page-item:hover {
 
 .modal__inner {
     background: #fff;
+    border: 1px solid #816851;
     border-radius: 4px;
     padding: 50px 40px 40px;
-    width: 640px;
+    width: 720px;
+    height: 720px;
     max-width: 90vw;
+    max-height: 90vh;
     position: relative;
-    max-height: 85vh;
     overflow-y: auto;
+    box-shadow: 5px 2px 5px 0px rgba(63, 50, 41, 0.5);
 }
 
 .modal__close {
     position: absolute;
     top: 16px;
     right: 20px;
-    background: none;
-    border: none;
-    font-size: 22px;
+    background: #ffffff;
+    border: 1px solid #7a7045;
+    font-size: 21px;
     color: #7a7045;
     cursor: pointer;
-    line-height: 1;
+    line-height: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal__table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 50px;
     margin-bottom: 28px;
 }
 
 .modal__table th {
-    background: #ae9c92;
-    color: #fff;
+    background: none;
+    color: #7a7045;
     padding: 12px 20px;
     text-align: left;
-    font-weight: normal;
+    font-weight: 5px;
     width: 35%;
-    border: 1px solid #c5b5ac;
+    border: none;
 }
 
 .modal__table td {
     padding: 12px 20px;
-    border: 1px solid #e0d5d0;
-    color: #7a7045;
+    border: none;
+    color: #ae9c92;
     word-break: break-all;
 }
 
@@ -385,13 +408,14 @@ a.page-item:hover {
 }
 
 .btn-delete {
-    padding: 10px 40px;
+    padding: 7px 20px;
     background: #c0392b;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
+    margin-top: 80px;
 }
 
 .btn-delete:hover {

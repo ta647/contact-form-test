@@ -28,9 +28,7 @@
                     </div>
                     <div class="auth__input-wrap">
                         <input class="auth__input" type="email" name="email" value="{{ old('email') }}" placeholder="例: test@example.com">
-                        @error('email')
-                            <p class="auth__error">{{ $message }}</p>
-                        @enderror
+                        <p class="auth__error">@error('email'){{ $message }}@enderror</p>
                     </div>
                 </div>
                 <div class="auth__form-group">
@@ -39,9 +37,7 @@
                     </div>
                     <div class="auth__input-wrap">
                         <input class="auth__input" type="password" name="password" placeholder="例: coachtech1106">
-                        @error('password')
-                            <p class="auth__error">{{ $message }}</p>
-                        @enderror
+                        <p class="auth__error">@error('password'){{ $message }}@enderror</p>
                     </div>
                 </div>
                 <div class="auth__button-wrap">

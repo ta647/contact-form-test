@@ -83,7 +83,7 @@ main {
 }
 
 .auth__form--login .auth__form-group {
-    margin-bottom: 40px;
+    margin-bottom: 8px;
 }
 
 .auth__form-group {
@@ -114,6 +114,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .auth__input {
@@ -128,7 +129,7 @@ main {
 }
 
 .auth__error {
-    height: 5px;
+    height: 18px;
     color: #ff0000;
     font-size: 13px;
     margin-top: 4px;
